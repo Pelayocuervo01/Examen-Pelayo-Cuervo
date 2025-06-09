@@ -44,4 +44,13 @@ document.addEventListener("DOMContentLoaded", () => {
             console.error("Error al obtener los cócteles", error);
             container.textContent = "No se pudieron obtener los cócteles.";
         });
+        document.getElementById("search-input").addEventListener("input", function () {
+        const query = this.value.toLowerCase();
+        const cards = document.querySelectorAll(".card");
+
+        cards.forEach(card => {
+            const title = card.querySelector("h4").textContent.toLowerCase();
+            card.style.display = title.includes(query) ? "inline-block" : "none";
+        });
+    });
 });
