@@ -10,6 +10,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    font-family: 'Orbitron', sans-serif;
 }
 
 #header a {
@@ -22,11 +23,10 @@ body {
 
 #header a:hover {
   color: transparent;
-  color: tomato;
-  font-size: 20px;
+  color: #121212;
 }
 
 #title-menu {
     margin-left: 10px;
-
+    font-family: 'Orbitron', sans-serif;
 }
