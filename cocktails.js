@@ -5,7 +5,8 @@ document.addEventListener("DOMContentLoaded", () => {
         .then(respuesta => respuesta.json())
         .then(data => {
             const drinks = data.drinks;
-
+            // Nombre del cocktail strDrink
+            // Imagen strDrinkThumb
             drinks.forEach(drink => {
                 const card = document.createElement("div");
                 card.classList.add("card");
@@ -44,6 +45,7 @@ document.addEventListener("DOMContentLoaded", () => {
             console.error("Error al obtener los cócteles", error);
             container.textContent = "No se pudieron obtener los cócteles.";
         });
+        // Search function
         document.getElementById("search-input").addEventListener("input", function () {
         const query = this.value.toLowerCase();
         const cards = document.querySelectorAll(".card");
