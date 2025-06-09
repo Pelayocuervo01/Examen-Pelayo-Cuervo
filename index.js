@@ -3,7 +3,8 @@ document.addEventListener("DOMContentLoaded", () => {
     // la api es TheMealDB — https://www.themealdb.com
     // Replicamos algo parecido a lo que hemos hecho con los cocteles 
     // y lo representamos en my order 
-
+    // si lees esto no me ha dado tiempo a separar por categorias
+    
     const container = document.getElementById("content-container");
 
     fetch("https://www.themealdb.com/api/json/v1/1/filter.php?c=Seafood")
@@ -27,5 +28,16 @@ document.addEventListener("DOMContentLoaded", () => {
             card.appendChild(name);
             container.appendChild(card);
         })
+        });
+        // Search function
+        document.getElementById("search-input").addEventListener("input", function () {
+        const query = this.value.toLowerCase();
+        const cards = document.querySelectorAll(".card");
+
+        cards.forEach(card => {
+            const title = card.querySelector("h4").textContent.toLowerCase();
+            card.style.display = title.includes(query) ? "inline-block" : "none";
+        });
     });
 });
+
