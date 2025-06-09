@@ -2,7 +2,8 @@ document.addEventListener("DOMContentLoaded", () =>  {
     const container = document.getElementById("order-container");
     const savedDrinks = JSON.parse(localStorage.getItem("myOrder")) || [];
 
-    if (savedDrinks.length == 0) {
+
+    if (savedDrinks.length == 0 && savedMeals == 0) {
         container.textContent = "No hay productos guardados.";
         return;
     }
